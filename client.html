@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="client.css">
+		<link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
+		<title>CHAT VAndreyka</title>
+	</head>
+	
+	<body>
+		<div class="status-bar">
+			<div class="name">Статус:</div>
+			<div class="name">Имя:</div>
+		</div>
+
+		<div class="status-bar">
+			<div class="name" id="status">Offline</div>
+			<div class="name" id="nick"></div>
+		</div>
+		
+		<div class="form">
+			<textarea class="output" disabled id="display"></textarea>
+				<table>
+					<tr>
+						<td>
+							<textarea class="input" id="input" placeholder="Напишите сообщение..."></textarea>
+						</td>
+						
+						<td>
+							<button type="button" class="send" id="send">Отправить</button>
+						</td>
+					</tr>
+				</table>
+		</div>
+		
+		<script src="client.js"></script>
+	</body>
+</html>
