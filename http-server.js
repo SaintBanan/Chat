@@ -6,7 +6,7 @@ http.createServer((req, res) => {
 	{
 		case '/':
 			res.writeHead(200, { "Content-Type": "text/html" });
-			file.readFile("client.html", (err, data) => res.end(data));
+			file.readFile("client.php", (err, data) => res.end(data));
 			break;
 		case "/client.css":
 			res.writeHead(200, { "Content-Type": "text/css" });
