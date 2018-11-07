@@ -34,4 +34,4 @@ http.createServer((req, res) => {
 			res.end("404 Not found");
 			break;
 	}
-}).listen(parseInt(port), "192.168.1.8", () => console.log("Сервер работает..."));
+}).listen(parseInt(port), () => console.log("Сервер работает..."));
