@@ -4,7 +4,6 @@ var		Status = document.getElementById("status");
 var 	nickname = null;
 var		nick = document.getElementById("nick");
 const	send = document.getElementById("send");
-var		port = process.env.PORT || 3000;
 const	client = new WebSocket("ws://192.168.1.8:3000");
 
 while(nickname == null || nickname == '' || nickname.length > 14)
