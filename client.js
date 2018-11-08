@@ -4,7 +4,7 @@ var		Status = document.getElementById("status");
 var 	nickname = null;
 var		nick = document.getElementById("nick");
 const	send = document.getElementById("send");
-var		client = new WebSocket("ws://192.168.1.8:465");
+var		client = new WebSocket("ws://192.168.1.8:8080");
 
 while(nickname == null || nickname == '' || nickname.length > 14)
 	nickname = prompt("Введите nickname:\n(не более 14-ти символов)");
