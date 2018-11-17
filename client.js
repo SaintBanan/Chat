@@ -1,41 +1,25 @@
-var		display = document.getElementById("display");
-var		input = document.getElementById("input");
-var		Status = document.getElementById("status");
-var 	nickname = null;
-var		nick = document.getElementById("nick");
-const	send = document.getElementById("send");
-var		client = new WebSocket("wss://192.168.1.8:8080");
-
-while(nickname == null || nickname == '' || nickname.length > 14)
-	nickname = prompt("Введите nickname:\n(не более 14-ти символов)");
-
-nick.innerHTML = nickname;
+var	display = document.getElementById("display");
+var	input = document.getElementById("input");
+var	send = document.getElementById("send");
+var	client = new WebSocket("ws://localhost:3000");
 
 function PrintMsg(msg)
-{
-	var i = 0;
-	
-	while(msg[i] != '!') i++;
-	
-	var user = msg.substring(0, i);
-	
-	msg = msg.substring(i + 1);	
-	
-	display.value += "Сообщение от " + user + '\n' + msg + "\n\n";
+{	
+	var data = JSON.parse(msg.data);
+
+	display.value += data.message + "\n\n";
 }
 
-client.onopen = () => Status.innerHTML = "Online";
-client.onclose = () => Status.innerHTML = "Offline";
-client.onmessage = msg => PrintMsg(msg.data);
+client.onopen = () => alert("online");
+client.onclose = () => alert("offline");
+client.onmessage = msg => PrintMsg(msg);
 
 send.addEventListener("click", e => {
 	if(input.value != '')
 	{
-		var user = nickname + '!';
-		var msg = user.concat(input.value);
+		var js = JSON.stringify({ message: input.value});
 		
-		client.send(msg);
-		PrintMsg(msg);
+		client.send(js);
 		input.value = '';
 	}
 });
