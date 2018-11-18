@@ -2,10 +2,11 @@ const express = require("express");
 const http_server = express();
 const port = process.env.PORT || 3000;
 const file = require("fs");
+const WebSocket = require("ws").Server;
 
-http_server.get('/', (req, res) => {
-	res.writeHead(200, { "Content-Type": "text/html" });
-	file.readFile("client.html", (err, data) => res.end(data));
+/*http_server.get('/chat', (req, res) => {
+		res.writeHead(200, { "Content-Type": "text/html" });
+		file.readFile("client.html", (err, data) => res.end(data));
 });
 
 http_server.get('/client.css', (req, res) => {
@@ -31,12 +32,13 @@ http_server.get('/back.jpg', (req, res) => {
 http_server.get('/favicon.jpg', (req, res) => {
 	res.writeHead(200, { "Content-Type": "image/x-icon" });
 	file.readFile("favicon.jpg", (err, data) => res.end(data));
-});
+});*/
+
+http_server.use(express.static(__dirname));
 
 http_server.listen(port, () => console.log("Сервер работает..."));
 
-const	WebSocket = require("ws").Server;
-var 	server = new WebSocket({ http_server });
+const server = new WebSocket({ port: 8080});
 
 server.on("connection", ws => {
 	

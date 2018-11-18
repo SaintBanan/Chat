@@ -5,7 +5,7 @@ var 	nickname = '';
 var		nick = document.getElementById("nick");
 var		send = document.getElementById("send");
 var		host = location.origin.replace("http", "ws");
-const	client = new WebSocket(host);
+const	client = new WebSocket("host" + ":8080");
 
 while(nickname == null || nickname == '' || nickname.length > 14)
 	nickname = prompt("Введите nickname:\n(не более 14-ти символов)");
@@ -46,7 +46,7 @@ client.onclose = () => Status.innerHTML = "Offline";
 client.onmessage = msg => PrintMsg(msg, true);
 
 send.addEventListener("click", e => {
-	e.preventDefault();
+	//e.preventDefault();
 	
 	if(input.value != '')
 	{
