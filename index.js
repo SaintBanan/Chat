@@ -55,7 +55,7 @@ server.on("connection", ws => {
 	});
 	
 	ws.on("close", function() {
-    console.log("websocket connection close")
+    console.log("websocket connection close");
    
   });
 });
