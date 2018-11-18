@@ -53,4 +53,9 @@ server.on("connection", ws => {
 			if(client.readyState === WebSocket.OPEN && client != ws) client.send(msg);
 		});
 	});
+	
+	ws.on("close", function() {
+    console.log("websocket connection close")
+   
+  });
 });
