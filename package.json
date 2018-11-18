@@ -6,6 +6,6 @@
 		"ws": "^6.1.0"
 	},
 	"scripts": {
-		"start": "node server.js"
+		"start": "node index.js"
 	}
 }
