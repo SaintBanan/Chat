@@ -1,9 +1,9 @@
-const express = require("express");
-const http_server = express();
-const http = require("http");
-const port = process.env.PORT || 3000;
-//const file = require("fs");
-const WebSocket = require("ws").Server;
+var express = require("express");
+var http_server = express();
+var http = require("http");
+var port = process.env.PORT || 3000;
+//var file = require("fs");
+var WebSocket = require("ws").Server;
 
 /*http_server.get('/chat', (req, res) => {
 		res.writeHead(200, { "Content-Type": "text/html" });
@@ -41,9 +41,9 @@ http_server.use(express.static(__dirname + '/'));
 
 //http_server.listen(port, () => console.log("Сервер работает..."));
 
-const tmpServer = http.createServer(http_server).listen(port);
+var tmpServer = http.createServer(http_server).listen(port);
 
-const server = new WebSocket({ server: tmpServer});
+var server = new WebSocket({ server: tmpServer});
 
 server.on("connection", ws => {
 	
