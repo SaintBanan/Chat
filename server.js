@@ -1,5 +1,6 @@
 const express = require("express");
 const http_server = express();
+const http = require("http");
 const port = process.env.PORT || 3000;
 //const file = require("fs");
 const WebSocket = require("ws").Server;
@@ -38,9 +39,11 @@ http_server.get('/favicon.jpg', (req, res) => {
 
 http_server.use(express.static(__dirname + '/'));
 
-http_server.listen(port, () => console.log("Сервер работает..."));
+//http_server.listen(port, () => console.log("Сервер работает..."));
 
-const server = new WebSocket({ server: http_server});
+const tmpServer = http.createServer(http_server).listen(port);
+
+const server = new WebSocket({ server: tmpServer});
 
 server.on("connection", ws => {
 	
