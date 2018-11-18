@@ -7,6 +7,28 @@
 	background-image: url(back.jpg);
 	border: 1px solid black;
 	border-radius: 7px;
+	-moz-border-radius: 7px; /* Firefox */
+	-webkit-border-radius: 7px; /* Safari, Google Chrome */	
+}
+
+.status-bar
+{
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.name
+{
+	color: white;
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: bold;	
+	font-size: 25px;
+}
+
+#status, #nick
+{
+	color: black;
 }
 
 body
@@ -20,10 +42,13 @@ body
 	width: 380px;
 	background-color: white;
 	padding: 9px;
+	outline: none;
 	font-family: Verdana, Arial, sans-serif;
 	font-size: 14px;
 	color: black;
 	border-radius: 7px;
+	-moz-border-radius: 7px; /* Firefox */
+	-webkit-border-radius: 7px; /* Safari, Google Chrome */
 	resize: none;
 	float: left;
 	margin-left: 12px;
@@ -45,6 +70,7 @@ body
 #send
 {
 	padding: 8px;
+	outline: none;
 	margin-left: 8px;
 	margin-top: 2px;
 }
