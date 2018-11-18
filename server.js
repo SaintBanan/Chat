@@ -1,7 +1,7 @@
 const express = require("express");
 const http_server = express();
 const port = process.env.PORT || 3000;
-const file = require("fs");
+//const file = require("fs");
 const WebSocket = require("ws").Server;
 
 /*http_server.get('/chat', (req, res) => {
@@ -34,11 +34,13 @@ http_server.get('/favicon.jpg', (req, res) => {
 	file.readFile("favicon.jpg", (err, data) => res.end(data));
 });*/
 
-http_server.use(express.static(__dirname));
+//http_server.use((req, res) => res.sendFile(INDEX));
+
+http_server.use(express.static(__dirname + '/'));
 
 http_server.listen(port, () => console.log("Сервер работает..."));
 
-const server = new WebSocket({ port: 8080});
+const server = new WebSocket({ server: http_server});
 
 server.on("connection", ws => {
 	
