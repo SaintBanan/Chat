@@ -46,7 +46,7 @@ client.onclose = () => Status.innerHTML = "Offline";
 client.onmessage = msg => PrintMsg(msg, true);
 
 send.addEventListener("click", e => {
-	//e.preventDefault();
+	e.preventDefault();
 	
 	if(input.value != '')
 	{
