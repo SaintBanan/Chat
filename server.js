@@ -36,7 +36,7 @@ http_server.get('/favicon.jpg', (req, res) => {
 http_server.listen(port, () => console.log("Сервер работает..."));
 
 const	WebSocket = require("ws").Server;
-var 	server = new WebSocket({ server: http_server });
+var 	server = new WebSocket({ http_server });
 
 server.on("connection", ws => {
 	
