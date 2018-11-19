@@ -2,19 +2,20 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		 <meta name="viewport" content="width=device-width, height=device-height">
+		<meta name="viewport" content="width=device-width, height=device-height">
 		<link rel="stylesheet" type="text/css" href="client.css">
+		<link rel="stylesheet" type="text/css" media="(max-device-width:480px)" href="mobile.css">
 		<link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
 		<title>CHAT VAndreyka</title>
 	</head>
 	
 	<body>
-		<div class="status-bar">
+		<div class="status_bar" id="HeadStatus">
 			<div class="name">Статус:</div>
 			<div class="name">Имя:</div>
 		</div>
 
-		<div class="status-bar">
+		<div class="status_bar" id="DownStatus">
 			<div class="name" id="status">Offline</div>
 			<div class="name" id="nick"></div>
 		</div>

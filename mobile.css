@@ -1,0 +1,43 @@
+.form
+{	
+	margin: 10% auto;
+}
+
+#input
+{
+	margin-left: 7px;
+}
+
+.output
+{
+	margin: 7px;
+}
+
+#send
+{
+	/*margin-top: 3px;
+	margin-right: 7px;*/
+	margin-right: 5px;
+	float: right;
+}
+
+.status_bar
+{
+	float: none;
+	margin-top: 0px;
+}
+
+.name
+{	
+	font-size: 16px;
+}
+
+#HeadStatus
+{
+	float: left;
+}
+
+#DownStatus
+{
+	margin-left: 85px;
+}
